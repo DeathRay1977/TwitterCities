@@ -1,0 +1,26 @@
+{
+  "name": "twitter_cities",
+  "version": "1.0.0",
+  "description": "Search Twitter by city and map results",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeathRay1977/TwitterCities.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeathRay1977/TwitterCities/issues"
+  },
+  "homepage": "https://github.com/DeathRay1977/TwitterCities#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "kerberos": "0.0.17",
+    "mongoose": "^4.2.5",
+    "mongoui": "^0.2.10",
+    "passport": "^0.3.2"
+  }
+}
