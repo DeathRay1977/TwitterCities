@@ -8,15 +8,37 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/signup', function(req, res, next) {
-  res.render('register',{message: req.flash('message')});
+  res.render('signup', {
+    message: req.flash('message')
+  });
+});
+
+/* Handle Logout */
+router.get('/signout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+router.get('/login', function(req, res, next) {
+  res.render('login', {
+    message: req.flash('message')
+  });
 });
 
 /* Handle Login POST */
 router.post('/login', passport.authenticate('login', {
   successRedirect: '/',
-  failureRedirect: '/',
-  failureFlash : true
+  failureRedirect: '/users/login',
+  failureFlash: true
 
 }));
 
+/* Handle Registration POST */
+router.post('/signup', passport.authenticate('signup', {
+  successRedirect: '/',
+  failureRedirect: '/signup',
+  failureFlash: true,
+  successFlash: true
+
+}));
 module.exports = router;
