@@ -33,12 +33,11 @@ describe("User", function() {
       username: testUsername
     }, function(err, user) {
       if (err) throw err;
-      expect(function() {
         // test a matching password
-        user.comparePassword(goodPassword, function(err, isMatch) {
+        user.comparePassword(goodPassword, function(err, same) {
           if (err) throw err;
+          expect(same).toBe(true);
         });
-      }).not.toThrowError();
     });
   });
 
