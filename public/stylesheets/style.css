@@ -1,8 +1,20 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(../images/blue.jpg);
+  margin: 200px;
 }
 
 a {
   color: #00B7FF;
+  font-size: 18px;
+}
+
+h1 {
+  color: green;
+  font-size: 28px;
+}
+
+div.container.1 {
+  border-top: 2px;
 }
