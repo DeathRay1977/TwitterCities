@@ -38,6 +38,17 @@ h1.text-center.login-title{
 :link {
   color: white;
 }
+
+#map {
+  border: 1px solid black;
+  width: 450px;
+  height: 450px;
+}
+#tweet {
+  border: 1px solid black;
+  width: 450px;
+  height: 650px;
+}
 a:visited {
   color: white;
 }
