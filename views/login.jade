@@ -7,10 +7,9 @@ block content
       div.row
         div.col-sm-6.col-md-4.col-md-offset-4
           h1.text-center.login-title Sign in to TwitterCities
-            div.account-wall
-              form(class='form-signin', action='/users/login', method='POST')
-                input(type='text', name='username' class='form-control', placeholder='User Name',required, autofocus)
-                input(type='password', name='password' class='form-control', placeholder='Password', required)
-                button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
-                span.clearfix
-            a(href='/users/signup', class='text-center new-account') Create an account
+          form(class='form-signin', action='/users/login', method='POST')
+          input(type='text', name='username' class='form-control', placeholder='User Name',required, autofocus)
+          input(type='password', name='password' class='form-control', placeholder='Password', required)
+          button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
+          span.clearfix
+          a(href='/users/signup', class='text-center new-account') Create an account
