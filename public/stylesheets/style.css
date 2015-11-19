@@ -75,4 +75,5 @@ input[type=text] {
 button[type=submit] {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: bolder;
 }
