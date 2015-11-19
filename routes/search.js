@@ -35,28 +35,32 @@ router.post('/', function(req, res) {
       geocode: googleLoc.lat + "," + googleLoc.lng + ",5mi"
     };
 
-    console.log(params);
     T.get('search/tweets', params, gotData);
 
     function gotData(err, data, response) {
       if (err) console.log(err);
       var tweets = data.statuses;
+
+
       var pins = [];
+      var statuses = [];
+      var imageURL = '';
+
       for (var i = 0; i < tweets.length; i++) {
-        console.log(tweets[i].text);
-        console.log(tweets[i].geo);
 
         if (tweets[i].geo) {
           pins.push({
             location: tweets[i].geo.coordinates[0] + ',' +
               tweets[i].geo.coordinates[1]
           });
+          statuses.push(tweets[i].text);
         }
       }
+
       var mapParams = {
         center: location,
         zoom: 13,
-        size: '500x400',
+        size: '500x500',
         maptype: 'roadmap',
         markers: pins,
         style: [{
@@ -67,10 +71,18 @@ router.post('/', function(req, res) {
           }
         }],
       };
-      console.log(gmAPI.staticMap(mapParams)); // return static map URL
+      imageURL = gmAPI.staticMap(mapParams); // return static map URL
+      res.render('index', {
+        pageData: {
+          statuses: statuses,
+          imageURL: imageURL
+        }
+      });
+
     }
   });
-  res.redirect('/');
 });
+
+
 
 module.exports = router;
