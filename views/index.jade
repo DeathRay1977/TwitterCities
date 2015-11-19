@@ -1,20 +1,33 @@
 extends layout
 
 block content
-  div.container
-    h1 Index
-    #container.row
-      a(href='/users/login', class='text-center new-account') Log in
-    #container.row
-      a(href='/users/signup', class='text-center new-account') Create an account
-    #container.row
-      a(href='/users/signout', class='text-center new-account') Sign Out
-    #container.row
-      form(class='form-signin')
-              input(type='text', name='search_term' class='form-control', placeholder='Search', id='search_term', required, autofocus)
-              input(type='text', name='location' class='form-control', placeholder='Location', id='location', required)
-              input(type='text', name='number' class='form-control', placeholder='Number', id='number', required)
-              button(class='btn btn-lg btn-primary btn-block', type='submit' id='Go') Go
+  header
+    div.container
+      div.col-md-4
+        a(href='/users/login', class='text-center new-account') Log in
+      div.col-md-4
+        a(href='/users/signup', class='text-center new-account') Create an account
+      div.col-md-4
+        a(href='/users/signout', class='text-center new-account') Sign Out
+  body
+    main
+      div.container
+        div.row-fluid
+
+          div.container
+            form(class='form-signin', action='/search', method='POST')
+              input(type='text', name='search_term' class='form-group', placeholder='Search',required, autofocus)
+              input(type='text', name='location' class='form-group', placeholder='Location',required)
+              input(type='text', name='number' class='form-group', placeholder='Number of tweets',required)
+              button(class='btn btn-info', type='submit') Search
 
 
-
+          div.container
+            div.row
+              div.col-md-6
+                p
+                  img(src= pageData.imageURL)
+              div.col-md-6
+                ul
+                  - for (var i = 0; i < pageData.statuses.length; i++)
+                    li= pageData.statuses[i]
