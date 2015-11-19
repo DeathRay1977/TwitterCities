@@ -26,8 +26,8 @@ block content
             div.row
               div.col-md-6
                 p
-                  img(src="https://maps.googleapis.com/maps/api/staticmap?center=Opera+House,Sydney+Australia&zoom=13&size=500x500&markers=#{markers}&sensor=false")
+                  img(src= pageData.imageURL)
               div.col-md-6
-                script(type='text/javascript').
-                  for (var i = 0; i < #{pageData.statuses.length}; i++)
-                    { console.log(#{pageData.statuses[i]}) }
+                ul
+                  - for (var i = 0; i < pageData.statuses.length; i++)
+                    li= pageData.statuses[i]

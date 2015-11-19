@@ -26,9 +26,6 @@ router.post('/', function(req, res) {
   var latitude = '';
   var longitude = '';
   var googleLoc = {};
-  var pins = [];
-  var statuses = [];
-  var imageURL = '';
   gmAPI.geocode(geocodeParams, function(err, result) {
     googleLoc = result.results[0].geometry.location;
 
@@ -45,6 +42,9 @@ router.post('/', function(req, res) {
       var tweets = data.statuses;
 
 
+      var pins = [];
+      var statuses = [];
+      var imageURL = '';
 
       for (var i = 0; i < tweets.length; i++) {
 
@@ -71,13 +71,16 @@ router.post('/', function(req, res) {
           }
         }],
       };
-
       imageURL = gmAPI.staticMap(mapParams); // return static map URL
+      res.render('index', {
+        pageData: {
+          statuses: statuses,
+          imageURL: imageURL
+        }
+      });
+
     }
   });
-  res.render('index', { pageData: { statuses: statuses, imageURL: imageURL }
-});
-
 });
 
 
