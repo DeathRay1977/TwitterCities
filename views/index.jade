@@ -10,7 +10,7 @@ block content
     #container.row
       a(href='/users/signout', class='text-center new-account') Sign Out
     #container.row
-      form(class='form-signin')
+      form(class='form-signin', action='/search' method='post')
               input(type='text', name='search_term' class='form-control', placeholder='Search', id='search_term', required, autofocus)
               input(type='text', name='location' class='form-control', placeholder='Location', id='location', required)
               input(type='text', name='number' class='form-control', placeholder='Number', id='number', required)
