@@ -5,7 +5,7 @@ header {
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url(../images/upfeathers.png);
+  background-image: url(../images/cloud.jpg);
 }
 main {
   padding: 30px;
@@ -29,7 +29,12 @@ p {
 .map_tweets {
   margin-left: 300px;
 }
-
+h1.text-center.login-title{
+  color: #00FFFF;
+  font-size: 100px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin-bottom: 60px;
+}
 :link {
   color: white;
 }
