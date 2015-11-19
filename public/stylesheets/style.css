@@ -1,8 +1,44 @@
+header {
+  background-color: #444;
+  text-align: center;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(../images/upfeathers.png);
+}
+main {
+  padding: 30px;
 }
 
 a {
   color: #00B7FF;
+  font-size: 24px;
+}
+
+h1 {
+  color: green;
+  font-size: 28px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.map_tweets {
+  margin-left: 300px;
+}
+
+:link {
+  color: white;
+}
+a:visited {
+  color: #f0f0f0;
+}
+a:hover {
+  color: white;
+}
+a:active {
+  color: white;
 }
