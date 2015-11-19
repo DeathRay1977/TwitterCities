@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var flash = require('connect-flash');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var search = require('./routes/search');
 var app = express();
 var dbConfig = require('./src/db');
 var mongoose = require('mongoose');
@@ -126,7 +126,7 @@ passport.use('signup', new LocalStrategy({
 
 app.use('/', routes);
 app.use('/users', users);
-
+app.use('/search', search);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
