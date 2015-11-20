@@ -13,22 +13,20 @@ block content
     main
       div.container
         div.row-fluid
-              
           div.container
             form(class='form-signin', action='/search', method='POST')
-            input(type='text', name='search_term' class='form-group', placeholder='Search',required, autofocus)
-            input(type='text', name='location' class='form-group', placeholder='Location',required, autofocus)
-            button(class='btn btn-info', type='submit') Go
-          
-        
-          div.container 
+              input(type='text', name='search_term' class='form-group', placeholder='Search',required, autofocus)
+              input(type='text', name='location' class='form-group', placeholder='Location',required)
+              input(type='text', name='number' class='form-group', placeholder='Number of tweets',required)
+              button(class='btn btn-info', type='submit') Search
+
+
+          div.container
             div.row
               div.col-md-6
                 p
-                #map
-                  img(src="https://maps.googleapis.com/maps/api/staticmap?center=Opera+House,Sydney+Australia&zoom=13&size=400x300&markers=#{markers}&sensor=false")
+                  img(src= pageData.imageURL)
               div.col-md-6
-                p
-                #tweets
-                  img(src="http://www.cloudave.com/wp-content/uploads/HLIC/106c2896f6edc223276d1833bda9df4d.png")
-               
+                ul
+                  - for (var i = 0; i < pageData.statuses.length; i++)
+                    li= pageData.statuses[i]
